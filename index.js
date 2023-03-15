@@ -7,7 +7,9 @@ const qrcode = require('qrcode-terminal');
 
 const client = new Client({
     authStrategy: new LocalAuth(),
-    puppeteer: { headless: true }
+    puppeteer: { 
+        args: ['--no-sandbox', '--disable-setuid-sandbox'],
+        headless: true }
 });
 
 client.initialize();
