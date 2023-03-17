@@ -9,7 +9,7 @@ const options = {
 module.exports.sendDailyVerses = async (client) => {
     const response = await getDailyVerse();
     const verse = convert(response.data, options);
-    const job = schedule.scheduleJob('12 12 * * *', () => {
+    const job = schedule.scheduleJob('0 5 * * *', () => {
         client.sendMessage(groupIds.generacionDeFe, verse)
     })
 }

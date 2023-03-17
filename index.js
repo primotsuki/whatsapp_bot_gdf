@@ -27,9 +27,8 @@ client.on('authenticated', async () => {
     console.log('authenticated');
 });
 
-client.on('ready', () =>{
-    console.log(new Date())
-    console.log('starting scheduled jobs for testing');
+client.on('ready', async () =>{
+    console.log('starting scheduled jobs for the groups included');
     sendReminders(client);
     sendDailyVerses(client);
 })
