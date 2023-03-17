@@ -19,7 +19,8 @@ client.on('loading_screen', (percent, message) => {
 });
 
 client.on('qr', (qr) => {
-   qrcode.generate(qr, {small: true})
+   //qrcode.generate(qr, {small: true})
+   console.log(qr)
 });
 
 client.on('authenticated', async () => {
@@ -27,6 +28,7 @@ client.on('authenticated', async () => {
 });
 
 client.on('ready', () =>{
+    console.log(new Date())
     console.log('starting scheduled jobs for testing');
     sendReminders(client);
     sendDailyVerses(client);
