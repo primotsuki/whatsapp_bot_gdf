@@ -19,8 +19,8 @@ client.on('loading_screen', (percent, message) => {
 });
 
 client.on('qr', (qr) => {
-   //qrcode.generate(qr, {small: true})
    console.log(qr)
+   qrcode.generate(qr, {small: true})
 });
 
 client.on('authenticated', async () => {
