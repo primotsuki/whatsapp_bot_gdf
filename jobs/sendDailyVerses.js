@@ -9,7 +9,8 @@ const options = {
 module.exports.sendDailyVerses = async (client) => {
     const response = await getDailyVerse();
     const verse = convert(response.data, options);
-    const job = schedule.scheduleJob('0 12 * * *', () => {
-        client.sendMessage(groupIds.generacionDeFe, verse)
+    const IndexBracket = verse.indexOf('[');
+    const job = schedule.scheduleJob('0 8 * * *', () => {
+        client.sendMessage(groupIds.generacionDeFe, verse.substring(0, IndexBracket))
     })
 }
